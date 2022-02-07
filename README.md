@@ -6,8 +6,8 @@ This Repository is created to deploy the web application "Deskship" as a cloud d
 ## Used Versions
 
 - Minikube v1.25.1 on Ubuntu 20.04
-- Kubectl v1.23.3 (Client)
-- Kubectl v1.23.1 (Server-Minikube-Local) 
+- Kubectl v1.23.3 (client)
+- Kubectl v1.23.1 (server-minikube-local) 
 
 ---  ***more coming soon*** ---
 
