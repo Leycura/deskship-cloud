@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: deskship
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deskship: web
+  template:
+    metadata:
+      labels:
+        deskship: web
+    spec:
+      containers:
+      - name: frontend
+        image: deskship-frontend:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: deskship
+spec:
+  type: NodePort
+  selector:
+    deskship: web
+  ports:
+  - port: 8080
+    protocol: TCP
