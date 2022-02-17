@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: deskship
+spec:
+  type: NodePort
+  selector:
+    deskship: frontend
+  ports:
+    - port: 80
+      nodePort: 30001
