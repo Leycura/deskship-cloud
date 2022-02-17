@@ -14,3 +14,17 @@ This Repository is created to deploy the web application "Deskship" as a cloud d
 ## Commands/Notes while working:
 
 eval $(minikube docker-env).
+
+## ToDo's
+
+### Research
+
+- StatefulSet
+- Persistent Volume
+- Which Cloud?
+- Nginx-Ingress or else? (depending on Cloud)
+
+### Code
+
+- Postgres (StatefulSet - Persistent Volume)
+- Test Backend with Postgres
