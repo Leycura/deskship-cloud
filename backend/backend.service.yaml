@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: deskship
+spec:
+  type: NodePort
+  selector:
+    deskship: backend
+  ports:
+    - port: 8000
+      nodePort: 30002

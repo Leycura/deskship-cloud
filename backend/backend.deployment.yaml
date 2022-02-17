@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: deskship
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      deskship: backend
+  template:
+    metadata:
+      labels:
+        deskship: backend
+    spec:
+      containers:
+        - name: frontend
+          image: deskship-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
