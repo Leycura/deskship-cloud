@@ -9,22 +9,33 @@ This Repository is created to deploy the web application "Deskship" as a cloud d
 - Kubernetes v1.23.3 (client)
 - Kubernetes v1.23.1 (Minikube) 
 
----  ***more coming soon*** ---
+## Notes:
+ 
+To get Minikube [access to local docker images](https://kubernetes.io/de/docs/setup/minikube/):
 
-## Commands/Notes while working:
+```
+eval $(minikube docker-env). 
+```
 
-eval $(minikube docker-env).
+Expose services of type [LoadBalancer in Minikube](https://minikube.sigs.k8s.io/docs/handbook/accessing/#using-minikube-tunnel):
+
+```
+minikube tunnel
+```
+
+
 
 ## ToDo's
 
 ### Research
 
-- StatefulSet
-- Persistent Volume
+- More about PVC! 
 - Which Cloud?
 - Nginx-Ingress or else? (depending on Cloud)
 
 ### Code
 
-- Postgres (StatefulSet - Persistent Volume)
 - Test Backend with Postgres
+- Create Postgres with initial script (test data)
+
+---  ***more coming soon*** ---
