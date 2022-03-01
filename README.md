@@ -30,12 +30,16 @@ minikube tunnel
 ### Research
 
 - More about PVC! 
-- Which Cloud?
+- Which Cloud? 
+  - Google Compute Engine (E2 Micro Instance)
 - Nginx-Ingress or else? (depending on Cloud)
+  - GKE Ingress for HTTP(S) loadbalancer
+  - Nginx-Ingress possible?
 
 ### Code
 
+- Google CLI
 - Test Backend with Postgres
-- Create Postgres with initial script (test data)
+- Develop in Cloud
 
 ---  ***more coming soon*** ---
