@@ -5,41 +5,35 @@ This Repository is created to deploy the web application "Deskship" as a cloud d
 
 ## Used Versions
 
-- Minikube v1.25.1 on Ubuntu 20.04
-- Kubernetes v1.23.3 (client)
-- Kubernetes v1.23.1 (Minikube) 
+- Google Cloud SDK 375.0.0
+- Kubernetes v1.23.4 (client)
+- Kubernetes v1.23.4 (server) 
+- CNI (Calico)
+
+- Minikube v1.25.1 on Ubuntu 20.04 (testing local)
+
+## Summary State Cloud
+
+- Which Cloud? 
+  - Google Compute Engine
+
+- VM-Instances 
+  - VM-Instance 1: controller (n1-standard-1)
+  - VM Instance 2: worker-0 (n1-standard-1)
+
+- DB
+  - Postgres deployed as stateful set
+
+- Frontend/Backend
+  - Deployed in namespace deskship
 
 ## Notes:
- 
-To get Minikube [access to local docker images](https://kubernetes.io/de/docs/setup/minikube/):
 
-```
-eval $(minikube docker-env). 
-```
+### ToDo's
 
-Expose services of type [LoadBalancer in Minikube](https://minikube.sigs.k8s.io/docs/handbook/accessing/#using-minikube-tunnel):
+- Networking (Nginx Ingress Controller as Service)
+- Connect with reserved domain
 
-```
-minikube tunnel
-```
-
-
-
-## ToDo's
-
-### Research
-
-- More about PVC! 
-- Which Cloud? 
-  - Google Compute Engine (E2 Micro Instance)
-- Nginx-Ingress or else? (depending on Cloud)
-  - GKE Ingress for HTTP(S) loadbalancer
-  - Nginx-Ingress possible?
-
-### Code
-
-- Google CLI
-- Test Backend with Postgres
-- Develop in Cloud
 
 ---  ***more coming soon*** ---
+
