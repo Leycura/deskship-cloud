@@ -15,7 +15,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: deskship-frontend:latest
-        imagePullPolicy: Never
+        image: us-west1-docker.pkg.dev/data-oasis-342809/deskship/deskship-frontend:latest
         ports:
         - containerPort: 80
