@@ -20,18 +20,14 @@ This Repository is created to deploy the web application "Deskship" as a cloud d
 - VM-Instances 
   - VM-Instance 1: controller (n1-standard-1)
   - VM Instance 2: worker-0 (n1-standard-1)
+  - VM Instance 3: worker-1 (n1-standard-1)
 
-- DB
-  - Postgres deployed as stateful set
-
-- Frontend/Backend
-  - Deployed in namespace deskship
+- Backend, Frontend, DB deployed in Namespace "deskship"
 
 ## Notes:
 
 ### ToDo's
 
-- Networking (Nginx Ingress Controller as Service)
 - Connect with reserved domain
 
 
