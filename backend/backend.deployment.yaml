@@ -14,8 +14,7 @@ spec:
         deskship: backend
     spec:
       containers:
-        - name: frontend
-          image: deskship-backend:latest
-          imagePullPolicy: Never
+        - name: backend
+          image: us-west1-docker.pkg.dev/data-oasis-342809/deskship/deskship-backend:latest
           ports:
             - containerPort: 8000

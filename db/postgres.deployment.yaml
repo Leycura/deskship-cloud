@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv-volume
+  namespace: deskship
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pv-claim
+  namespace: deskship
+spec:
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: deskship
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      deskship: postgres
+  template:
+    metadata:
+      labels:
+        deskship: postgres
+    spec:
+      volumes:
+      - name: postgres-pv-storage
+        persistentVolumeClaim:
+          claimName: postgres-pv-claim
+      containers:
+      - name: postgres
+        image: postgres:11
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          value: "name"
+        - name: POSTGRES_PASSWORD
+          value: "password"
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        - name: POSTGRES_DB
+          value: "deskship"
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-pv-storage
