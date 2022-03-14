@@ -33,7 +33,7 @@ metadata:
   name: postgres
   namespace: deskship
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       deskship: postgres
@@ -54,9 +54,9 @@ spec:
           - containerPort: 5432
         env:
         - name: POSTGRES_USER
-          value: "name"
+          value: "leycura"
         - name: POSTGRES_PASSWORD
-          value: "password"
+          value: "Test123!"
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata
         - name: POSTGRES_DB

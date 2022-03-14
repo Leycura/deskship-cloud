@@ -4,6 +4,7 @@ metadata:
   name: postgres
   namespace: deskship
 spec:
+  externalName: postgres
   type: LoadBalancer
   selector:
     deskship: postgres

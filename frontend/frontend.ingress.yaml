@@ -3,6 +3,9 @@ kind: Ingress
 metadata:
   name: fronend-ingress
   namespace: deskship
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
     - http:
@@ -15,3 +18,7 @@ spec:
               port:
                 number: 80
   ingressClassName: nginx
+
+  tls:
+    - hosts:
+      - deskship.leycura.de
